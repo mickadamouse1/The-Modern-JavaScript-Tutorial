@@ -1,121 +1,78 @@
+let year = "2020";
 
-// this is a variable, a box that stores data 
-// for example: a message.
+if (year == 2020) {
+    console.log(`The Year is ${2020}`);
+    console.log("Ham and Cheese");
+} 
 
-// this message is currently empty.
-let message;
+if (10 < 11) console.log("10 is less than 11");
 
-// this adds a message to the message variable
+let condition = (year > 1997);
 
-message = "Hello";
+if (condition) {
+    console.log("the year (2020) is greater than 1997");
+}
 
-// this then prints the message contents to the console for testing purposes
-console.log(message);
+if (!condition) {
+    console.log("the year is not greater than 1997");
+} else {
+    console.log("Already told you");
+}
 
-// However, declaring a variable with data stored can all be done using one line of code
+if (!condition) {
+    console.log("Year is really big");
+} else if (year < 2030) {
+    console.log("The year is less than 2030");
+} else {
+    console.log("Dunno");
+}
 
-let message2 = "Hello Again!";
+console.log(); // console readability whitespace
 
-console.log(message2);
+const jim = {
+    age: 18,
+    name: 'Jim',
+    gender: 'Male',
+    hasHands: true,
+    accessAllowed: undefined
+}
 
-// To expand on this, multiple variables can be declared at once
+const ela = {
+    age: 13,
+    name: 'Ela',
+    gender: 'Female',
+    hasHands: false,
+    accessAllowed: undefined
+}
 
-// this is, however, very messy and hard to read (therefore not recommended)
+setAccessPermission = obj => {
+    for (let i = 0; i < obj.length; i++) {
 
-let user = "James", age = 25, id = 08;
+        obj[i].accessAllowed = obj[i].age >= 18;
 
-console.log(user, age, id);
+        if (obj[i].accessAllowed) {
+            console.log(`${obj[i].name} is allowed access.`);
+        } else {
+            console.log(`${obj[i].name} is not allowed access.`);
+        }
 
-// cleaner but still more complicated
+        obj[i].instrument = (obj[i].hasHands) ? 'Guitar' : 'Bongos';
 
-let user2 = "Hoit",
-    age2 = 33,
-    id2 = 642;
+        console.log(`${obj[i].name}'s choice of instrument: ${obj[i].instrument.toLowerCase()}.`);
 
-console.log(user2, age2, id2);
+        obj[i].introduction = (obj[i].age < 7) ? 'Hi...' : 
+        (obj[i].age < 14 && obj[i].age > 7) ? `Hey, I'm ${obj[i].name}` :
+        (obj[i].age >= 14 && obj[i].age < 99) ? 'Sup, bisch' : 'Errrhm! grrsm...';
 
-// changing variables can be done by simply re-declaring them
+        console.log(obj[i].introduction);
 
-let food;
+        (obj[i].gender == "Male") ? obj[i].temper = "Unpredictable" : obj[i].temper = "Calm";
 
-food = "Sausage";
+        console.log(`${obj[i].name}'s temper is rather ${obj[i].temper.toLowerCase()}.`);
+        console.log(); // console readability whitespace
+    }
+}
 
-console.log(food);
+let people = [jim, ela];
+setAccessPermission(people);
 
-food = "Bread";
-
-console.log(food);
-
-// a variable can be assigned to another variable, assuming it has data to pass on
-
-let name1 = "Jimmy";
-
-let name2 = name1;
-
-console.log(name1);
-
-// variable can only be named using letters, numbers, dollar signs and underscores
-
-let ham69 = "ham69";
-
-let $hugo$ = "$hugo$";
-
-let _underpants$$__9920 = "_underpants$$__9920";
-
-console.log(ham69, $hugo$, _underpants$$__9920);
-
-// however, the first character cannot be a digit
-
-// "let 6masters"  will not work
-
-// When a variable is multiple words, camel casing is used to ensure readability
-
-let howToFindNumber = "Check the Blue Pages";
-
-let howtofindnumber = "Check the Yellow Pages";
-
-console.log(howtofindnumber + " -- " + howToFindNumber);
-
-// foreign words are allowed when creating variables
-
-let 我 = "What does '我' even mean?";
-
-console.log(我);
-
-// keywords such as "let, return, function etc." cannot be used as variable names
-
-// const variables are variables that cannot be changed once declared
-
-const myBirthday = "01/03/1997";
-
-console.log(myBirthday);
-
-// naming const variable with uppercase letters is used for variables that hold hard to remember valuses
-
-const COLOUR_RED = "#F00";
-const COLOUR_GREEN = "#0F0";
-const COLOUR_BLUE = "#00F";
-const COLOUR_ORANGE = "#FF7F00";
-
-let colour = COLOUR_ORANGE;
-console.log(colour);
-
-// TASK
-
-let admin;
-let name;
-
-name = "John";
-admin = name;
-console.log(admin);
-
-// TASK 2 
-
-const myPlanet = "Planet Earth";
-let currentVisitors = ["Jill", "James", "Jimir", "Jone"];
-
-// TASK 3
-
-const BIRTHDAY = "18/04/1982";
-
-const age3 = console.log(BIRTHDAY);

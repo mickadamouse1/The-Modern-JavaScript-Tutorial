@@ -1,121 +1,53 @@
+console.log(`(2 > 1) = ${2 > 1}`); // true
+console.log(`(2 == 1) = ${2 == 1}`); // false
+console.log(`(2 != 1) = ${2 != 1}`); // true
+console.log();
 
-// this is a variable, a box that stores data 
-// for example: a message.
+let result = 5 > 4; // assings true to the variable
+console.log(`result = 5 > 4`);
+console.log(`Result: ${result}`);
+console.log();
 
-// this message is currently empty.
-let message;
+console.log(`('Z' > 'A') = ${'Z' > 'A'}`); // true
+console.log(`('Glow' > 'Glee') = ${'Glow' > 'Glee'}`); // true
+console.log(`('Bee' > 'Be') = ${'Bee' > 'Be'}`); // true
+console.log(`('Z' > 'z') = ${'Z' > 'z'}`); // false
+console.log(`('bass' > 'BASS') = ${'bass' > 'BASS'}`); // true
+console.log();
 
-// this adds a message to the message variable
+console.log(`Strings are converted to numbers automatically when comparing`);
+console.log(`('2' > 1) = ${'2' > 1}`); // true
+console.log(`('01' == 1) = ${'01' == 1}`); // true
+console.log(`(true == 1) = ${true == 1}`); // true
+console.log(`(false == 0) = ${false == 0}`); // true
+console.log();
 
-message = "Hello";
+console.log(`(0 == false) = ${0 == false}`); // true
+console.log(`('' == false) = ${'' == false}`); // true
+console.log(`Fix: using "===" checks for STRICT equality`);
+console.log(`(0 === false) = ${0 === false}`); // false
+console.log(`('' === false) = ${'' === false}`); // false
+console.log(`(0 !== false) = ${0 !== false}`); // true
+console.log();
 
-// this then prints the message contents to the console for testing purposes
-console.log(message);
+console.log(`(null === undefined) = ${null === undefined}`); // false
+console.log(`(null == undefined) = ${null == undefined}`); // true
+console.log();
 
-// However, declaring a variable with data stored can all be done using one line of code
+console.log(`(null > 0) = ${null > 0}`); // false
+console.log(`(null == 0) = ${null == 0}`); //false
+console.log(`(null >= 0) = ${null >= 0}`); // true
+console.log();
 
-let message2 = "Hello Again!";
+console.log(`"Undefined" should never be compared with other values`);
+console.log();
 
-console.log(message2);
+// TASK 1 
 
-// To expand on this, multiple variables can be declared at once
-
-// this is, however, very messy and hard to read (therefore not recommended)
-
-let user = "James", age = 25, id = 08;
-
-console.log(user, age, id);
-
-// cleaner but still more complicated
-
-let user2 = "Hoit",
-    age2 = 33,
-    id2 = 642;
-
-console.log(user2, age2, id2);
-
-// changing variables can be done by simply re-declaring them
-
-let food;
-
-food = "Sausage";
-
-console.log(food);
-
-food = "Bread";
-
-console.log(food);
-
-// a variable can be assigned to another variable, assuming it has data to pass on
-
-let name1 = "Jimmy";
-
-let name2 = name1;
-
-console.log(name1);
-
-// variable can only be named using letters, numbers, dollar signs and underscores
-
-let ham69 = "ham69";
-
-let $hugo$ = "$hugo$";
-
-let _underpants$$__9920 = "_underpants$$__9920";
-
-console.log(ham69, $hugo$, _underpants$$__9920);
-
-// however, the first character cannot be a digit
-
-// "let 6masters"  will not work
-
-// When a variable is multiple words, camel casing is used to ensure readability
-
-let howToFindNumber = "Check the Blue Pages";
-
-let howtofindnumber = "Check the Yellow Pages";
-
-console.log(howtofindnumber + " -- " + howToFindNumber);
-
-// foreign words are allowed when creating variables
-
-let 我 = "What does '我' even mean?";
-
-console.log(我);
-
-// keywords such as "let, return, function etc." cannot be used as variable names
-
-// const variables are variables that cannot be changed once declared
-
-const myBirthday = "01/03/1997";
-
-console.log(myBirthday);
-
-// naming const variable with uppercase letters is used for variables that hold hard to remember valuses
-
-const COLOUR_RED = "#F00";
-const COLOUR_GREEN = "#0F0";
-const COLOUR_BLUE = "#00F";
-const COLOUR_ORANGE = "#FF7F00";
-
-let colour = COLOUR_ORANGE;
-console.log(colour);
-
-// TASK
-
-let admin;
-let name;
-
-name = "John";
-admin = name;
-console.log(admin);
-
-// TASK 2 
-
-const myPlanet = "Planet Earth";
-let currentVisitors = ["Jill", "James", "Jimir", "Jone"];
-
-// TASK 3
-
-const BIRTHDAY = "18/04/1982";
-
-const age3 = console.log(BIRTHDAY);
+console.log(`(5 > 4) = ${5 > 4}`); // true
+console.log(`('apple' > 'pineapple') = ${'apple' > 'pineapple'}`); // false
+console.log(`('2' > '12') = ${'2' > '12'}`); // false
+console.log(`(undefined == null) = ${undefined == null}`); // true;
+console.log(`(undefined === null) = ${undefined === null}`); // false
+console.log(`(null == "\n0\n") = ${null == "\n0\n"}`); // false
+console.log(`(null === +"\n0\n") = ${null === +"\n0\n"}`);
