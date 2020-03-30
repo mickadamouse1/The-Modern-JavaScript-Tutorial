@@ -76,3 +76,39 @@ setAccessPermission = obj => {
 let people = [jim, ela];
 setAccessPermission(people);
 
+// TASK 1
+
+if ("0") {
+    console.log(`a string of "0" is a true conditional`);
+}
+
+// TASK 2
+
+let answer = prompt("What is the official name of JavaScript");
+answer = answer.toLowerCase();
+
+(answer == "ecmascript") ? console.log("Correct!") : console.log("Wrong!");
+
+// TASK 3
+
+let num = prompt("Enter a number");
+
+(num > 0) ? console.log(1) : 
+(num < 0) ? console.log(1) : console.log(0);
+
+// TASK 4 
+
+let results;
+
+result = ((4 + 5) < 4) ? "Below" : "Over";
+console.log(result);
+
+// TASK 5 
+
+let login;
+
+let message = (login == "Employee") ? "Hello" : 
+              (login == "Director") ? "Greetings" :
+              (login == "") ? "No Login" : "";
+
+console.log(message);

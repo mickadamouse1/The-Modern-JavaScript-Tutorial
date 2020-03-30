@@ -13,17 +13,34 @@ body {
     text-align: center;
 }
 
-h1 {
-    margin: 5rem;
+.title {
+    margin: 5rem 0 3.5rem;
     font-weight: 300;
     font-size: 3rem;
 }
 
+.header {
+    text-decoration: underline;
+    margin: 2.5rem 0;
+    font-size: 2.25rem;
+}
+
+p {
+    width: 75%;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 div a {
     display: block;
-    margin: 1.5rem;
+    margin: .6rem;
     font-size: 1.5rem;
     font-weight: 600;
+    width: max-content;
 }
 
 div a:hover {
