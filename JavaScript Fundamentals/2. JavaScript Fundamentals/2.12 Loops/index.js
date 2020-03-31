@@ -1,114 +1,105 @@
-let year = "2020";
+// 1 ------------------------------------------
+console.log("1. ------------------------------------------");
 
-if (year == 2020) {
-    console.log(`The Year is ${2020}`);
-    console.log("Ham and Cheese");
-} 
+let x = 10;
+let i = 0;
 
-if (10 < 11) console.log("10 is less than 11");
-
-let condition = (year > 1997);
-
-if (condition) {
-    console.log("the year (2020) is greater than 1997");
+while (i < x) {
+    console.log(i);
+    i++;
+    if (i == x) console.log(i);
 }
 
-if (!condition) {
-    console.log("the year is not greater than 1997");
-} else {
-    console.log("Already told you");
+console.log();
+
+
+// 2 ------------------------------------------
+console.log("2. ------------------------------------------");
+
+while (i) {
+    console.log(i);
+    i--;
+    if (i == 0) console.log(i);
 }
 
-if (!condition) {
-    console.log("Year is really big");
-} else if (year < 2030) {
-    console.log("The year is less than 2030");
-} else {
-    console.log("Dunno");
+console.log();
+
+
+// 3 ------------------------------------------
+console.log("3. ------------------------------------------");
+
+do {
+    console.log(i);
+    i++;
+    if (i == x) console.log(i);
+} while (i < x);
+
+console.log();
+
+
+// 4 ------------------------------------------
+console.log("4. ------------------------------------------");
+
+for (let i = 0; i <= 10; i++) {
+    console.log(i);
 }
 
-console.log(); // console readability whitespace
+console.log();
 
-const jim = {
-    age: 18,
-    name: 'Jim',
-    gender: 'Male',
-    hasHands: true,
-    accessAllowed: undefined
+// 5 ------------------------------------------
+console.log("5. ------------------------------------------");
+
+i = 0
+
+for (i = 0; i <= 3; i++) {
+    console.log(i);
 }
 
-const ela = {
-    age: 13,
-    name: 'Ela',
-    gender: 'Female',
-    hasHands: false,
-    accessAllowed: undefined
+console.log();
+
+// 6 ------------------------------------------
+console.log("6. ------------------------------------------");
+
+i = 0
+
+for (; i <= 3; i++) console.log(i)
+
+console.log();
+
+// 7 ------------------------------------------
+console.log("7. ------------------------------------------");
+
+i = 0
+
+for (; i <= 3; i++) {
+    if (i == 2) break;
+    console.log(i);
 }
 
-setAccessPermission = obj => {
-    for (let i = 0; i < obj.length; i++) {
+console.log();
 
-        obj[i].accessAllowed = obj[i].age >= 18;
+// 8 ------------------------------------------
+console.log("8. ------------------------------------------");
 
-        if (obj[i].accessAllowed) {
-            console.log(`${obj[i].name} is allowed access.`);
-        } else {
-            console.log(`${obj[i].name} is not allowed access.`);
-        }
+i = 0
 
-        obj[i].instrument = (obj[i].hasHands) ? 'Guitar' : 'Bongos';
+for (; i <= 3; i++) {
+    if (i % 2 == 0) continue;
+    console.log(i);
+}
 
-        console.log(`${obj[i].name}'s choice of instrument: ${obj[i].instrument.toLowerCase()}.`);
+console.log();
 
-        obj[i].introduction = (obj[i].age < 7) ? 'Hi...' : 
-        (obj[i].age < 14 && obj[i].age > 7) ? `Hey, I'm ${obj[i].name}` :
-        (obj[i].age >= 14 && obj[i].age < 99) ? 'Sup, bisch' : 'Errrhm! grrsm...';
 
-        console.log(obj[i].introduction);
+// 9 ------------------------------------------
+console.log("9. ------------------------------------------");
 
-        (obj[i].gender == "Male") ? obj[i].temper = "Unpredictable" : obj[i].temper = "Calm";
-
-        console.log(`${obj[i].name}'s temper is rather ${obj[i].temper.toLowerCase()}.`);
-        console.log(); // console readability whitespace
+outer: 
+for (let i = 0; i <= 10; i++) {
+    for (let j = 0; j < i*2; j++) {
+        console.log(j);
+        if (j == 3) break outer;
     }
 }
 
-let people = [jim, ela];
-setAccessPermission(people);
-
-// TASK 1
-
-if ("0") {
-    console.log(`a string of "0" is a true conditional`);
-}
-
-// TASK 2
-
-let answer = prompt("What is the official name of JavaScript");
-answer = answer.toLowerCase();
-
-(answer == "ecmascript") ? console.log("Correct!") : console.log("Wrong!");
-
-// TASK 3
-
-let num = prompt("Enter a number");
-
-(num > 0) ? console.log(1) : 
-(num < 0) ? console.log(1) : console.log(0);
-
-// TASK 4 
-
-let results;
-
-result = ((4 + 5) < 4) ? "Below" : "Over";
-console.log(result);
-
-// TASK 5 
-
-let login;
-
-let message = (login == "Employee") ? "Hello" : 
-              (login == "Director") ? "Greetings" :
-              (login == "") ? "No Login" : "";
-
-console.log(message);
+console.log();
