@@ -1,114 +1,139 @@
-let year = "2020";
+console.log("1 ---------------------------- 1");
 
-if (year == 2020) {
-    console.log(`The Year is ${2020}`);
-    console.log("Ham and Cheese");
-} 
+let x = prompt("1. Pick a number between 1 & 3");
+console.log("Pick a number between 1 & 3");
+console.log(x);
 
-if (10 < 11) console.log("10 is less than 11");
 
-let condition = (year > 1997);
-
-if (condition) {
-    console.log("the year (2020) is greater than 1997");
+switch(+x) {
+    case 1:
+        console.log("x = 1");
+        break;
+    case 2: 
+        console.log("x = 2");
+        break;
+    case 3:
+        console.log("x = 3");
+        break;
+    default: 
+        (x > 3) ? console.log("Too Large") : console.log("Too Small");
 }
 
-if (!condition) {
-    console.log("the year is not greater than 1997");
-} else {
-    console.log("Already told you");
+console.log();
+console.log("2 ---------------------------- 2");
+
+let a = prompt("What is 2 + 2");
+console.log("What is 2 + 2?");
+console.log(a);
+
+switch (+a) {
+    case 4: 
+        console.log("Correct!");
+        break;
+    default: (a > 4) ? console.log("Too Large") : console.log("Too Small");
 }
 
-if (!condition) {
-    console.log("Year is really big");
-} else if (year < 2030) {
-    console.log("The year is less than 2030");
-} else {
-    console.log("Dunno");
+console.log();
+console.log("3 ---------------------------- 3");
+
+let y = 5;
+
+switch (y) {
+    case 5: 
+        console.log(y);
+    case 6: 
+        console.log(y);
+    case 7:
+        console.log(y);
 }
 
-console.log(); // console readability whitespace
+console.log();
+console.log("4 ---------------------------- 4");
 
-const jim = {
-    age: 18,
-    name: 'Jim',
-    gender: 'Male',
-    hasHands: true,
-    accessAllowed: undefined
+let v = 10;
+let vv = 0;
+
+switch (v) {
+    case vv + 10:
+        console.log("Oohweee");
+        break;
+    default: console.log("awh damn");
 }
 
-const ela = {
-    age: 13,
-    name: 'Ela',
-    gender: 'Female',
-    hasHands: false,
-    accessAllowed: undefined
+console.log();
+console.log("5 ---------------------------- 5");
+
+let p = prompt("Enter any number");
+let pp = p % 2;
+
+switch(+pp) {
+    case 0: 
+        (p != "") ? console.log(`${p} is even!`) : console.log("Didn't enter a number...");
+        break;
+    case 1: 
+        console.log(`${p} is odd!`);
+        break;
+    default:
+        console.log("That's not a number... or it was simply too big :P");
 }
 
-setAccessPermission = obj => {
-    for (let i = 0; i < obj.length; i++) {
+console.log();
+console.log("6 ---------------------------- 6");
 
-        obj[i].accessAllowed = obj[i].age >= 18;
+let b = prompt("Enter a number between 0 and 10");
 
-        if (obj[i].accessAllowed) {
-            console.log(`${obj[i].name} is allowed access.`);
-        } else {
-            console.log(`${obj[i].name} is not allowed access.`);
-        }
-
-        obj[i].instrument = (obj[i].hasHands) ? 'Guitar' : 'Bongos';
-
-        console.log(`${obj[i].name}'s choice of instrument: ${obj[i].instrument.toLowerCase()}.`);
-
-        obj[i].introduction = (obj[i].age < 7) ? 'Hi...' : 
-        (obj[i].age < 14 && obj[i].age > 7) ? `Hey, I'm ${obj[i].name}` :
-        (obj[i].age >= 14 && obj[i].age < 99) ? 'Sup, bisch' : 'Errrhm! grrsm...';
-
-        console.log(obj[i].introduction);
-
-        (obj[i].gender == "Male") ? obj[i].temper = "Unpredictable" : obj[i].temper = "Calm";
-
-        console.log(`${obj[i].name}'s temper is rather ${obj[i].temper.toLowerCase()}.`);
-        console.log(); // console readability whitespace
-    }
+switch(+b) {
+    case 1:
+    case 3:
+    case 5:
+    case 7: 
+    case 9:
+        console.log(`${b} is odd!`);
+        break;
+    case 2:
+    case 4:
+    case 6:
+    case 8:
+    case 10: 
+        console.log(`${b} is even!`);
+        break;
+    default: 
+        (b == "") ? console.log("Didn't enter a number.") :
+        (b == 0) ? console.log(`${b} is neither even nor odd.`) :
+        (b > 0) ? console.log(`${b} is greater than 10.`) :
+        console.log(`${b} is less than 0`);
 }
 
-let people = [jim, ela];
-setAccessPermission(people);
+console.log();
+console.log("# ---------- TASK 1 ---------- #");
 
-// TASK 1
+let browser = prompt("What browser are you using? (i.e: Edge, Chrome, Opera etc.)").toLowerCase();
 
-if ("0") {
-    console.log(`a string of "0" is a true conditional`);
+if (browser == "edge") {
+    console.log("You've got the Edge!");
+} else if (browser == "chrome" 
+           || browser == "firefox" 
+           || browser == "safari" 
+           || browser == "opera") {
+               console.log("Okay, we support these browsers too");
+           } else {
+               console.log("We hope that this page looks ok!");
 }
 
-// TASK 2
+console.log();
+console.log("# ---------- TASK 2 ---------- #");
 
-let answer = prompt("What is the official name of JavaScript");
-answer = answer.toLowerCase();
+let apple = +prompt("a?", "");
 
-(answer == "ecmascript") ? console.log("Correct!") : console.log("Wrong!");
-
-// TASK 3
-
-let num = prompt("Enter a number");
-
-(num > 0) ? console.log(1) : 
-(num < 0) ? console.log(1) : console.log(0);
-
-// TASK 4 
-
-let results;
-
-result = ((4 + 5) < 4) ? "Below" : "Over";
-console.log(result);
-
-// TASK 5 
-
-let login;
-
-let message = (login == "Employee") ? "Hello" : 
-              (login == "Director") ? "Greetings" :
-              (login == "") ? "No Login" : "";
-
-console.log(message);
+switch (apple) {
+    case 0:
+        console.log(0);
+        break;
+    case 1: 
+        console.log(1);
+        break;
+    case 2:
+    case 3:
+        console.log("2,3");
+        break;
+}
