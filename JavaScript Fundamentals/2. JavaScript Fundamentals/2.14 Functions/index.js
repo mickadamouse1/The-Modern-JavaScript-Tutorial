@@ -1,114 +1,143 @@
-let year = "2020";
+console.log("1 ---------------------------- 1");
 
-if (year == 2020) {
-    console.log(`The Year is ${2020}`);
-    console.log("Ham and Cheese");
-} 
-
-if (10 < 11) console.log("10 is less than 11");
-
-let condition = (year > 1997);
-
-if (condition) {
-    console.log("the year (2020) is greater than 1997");
+function showMessage(message) {
+    console.log(message);
 }
 
-if (!condition) {
-    console.log("the year is not greater than 1997");
-} else {
-    console.log("Already told you");
+showMessage("Hey, I'm a message!");
+showMessage("Hey again!");
+showMessage("and again...");
+
+console.log();
+console.log("2 ---------------------------- 2");
+
+function showNumber() {
+    let num = 255;
+    console.log(num);
 }
 
-if (!condition) {
-    console.log("Year is really big");
-} else if (year < 2030) {
-    console.log("The year is less than 2030");
-} else {
-    console.log("Dunno");
+showNumber();
+// "console.log(num)" would not work, because the variable is local to the function
+
+console.log();
+console.log("3 ---------------------------- 3");
+
+let fruit1 = "Apple";
+let fruit2 = "Banana";
+
+function showFruit() {
+    let fruit3 = "Orange";
+    console.log(`${fruit1}, ${fruit2}, ${fruit3}`);
 }
 
-console.log(); // console readability whitespace
+showFruit();
 
-const jim = {
-    age: 18,
-    name: 'Jim',
-    gender: 'Male',
-    hasHands: true,
-    accessAllowed: undefined
+console.log();
+console.log("4 ---------------------------- 4");
+
+let tree = "Fresh Oak";
+
+function ageTree() {
+    tree = "Old Oak";
 }
 
-const ela = {
-    age: 13,
-    name: 'Ela',
-    gender: 'Female',
-    hasHands: false,
-    accessAllowed: undefined
+console.log(tree);
+
+ageTree(); // changes the tree value
+
+console.log(tree);
+
+console.log();
+console.log("5 ---------------------------- 5");
+
+let colour = "Saffron";
+
+function showColour() {
+    let colour = "Green";
+    console.log(colour);
 }
 
-setAccessPermission = obj => {
-    for (let i = 0; i < obj.length; i++) {
+console.log(colour);
+showColour();
+console.log(colour);
 
-        obj[i].accessAllowed = obj[i].age >= 18;
+console.log();
+console.log("6 ---------------------------- 6");
 
-        if (obj[i].accessAllowed) {
-            console.log(`${obj[i].name} is allowed access.`);
-        } else {
-            console.log(`${obj[i].name} is not allowed access.`);
-        }
-
-        obj[i].instrument = (obj[i].hasHands) ? 'Guitar' : 'Bongos';
-
-        console.log(`${obj[i].name}'s choice of instrument: ${obj[i].instrument.toLowerCase()}.`);
-
-        obj[i].introduction = (obj[i].age < 7) ? 'Hi...' : 
-        (obj[i].age < 14 && obj[i].age > 7) ? `Hey, I'm ${obj[i].name}` :
-        (obj[i].age >= 14 && obj[i].age < 99) ? 'Sup, bisch' : 'Errrhm! grrsm...';
-
-        console.log(obj[i].introduction);
-
-        (obj[i].gender == "Male") ? obj[i].temper = "Unpredictable" : obj[i].temper = "Calm";
-
-        console.log(`${obj[i].name}'s temper is rather ${obj[i].temper.toLowerCase()}.`);
-        console.log(); // console readability whitespace
-    }
+function say(from, text) {
+    console.log(`${from}: ${text}`);
 }
 
-let people = [jim, ela];
-setAccessPermission(people);
+say("James", "Hey, I'm James!");
 
-// TASK 1
+console.log();
+console.log("7 ---------------------------- 7");
 
-if ("0") {
-    console.log(`a string of "0" is a true conditional`);
+function say2(from, text) {
+    from = `*${from}*`;
+    console.log(`${from}: ${text}`);
 }
 
-// TASK 2
+let from = "Ann";
+say2(from, "Ooooweeeee!");
 
-let answer = prompt("What is the official name of JavaScript");
-answer = answer.toLowerCase();
+console.log();
+console.log("8 ---------------------------- 8");
 
-(answer == "ecmascript") ? console.log("Correct!") : console.log("Wrong!");
+function badFunction(x) {
+    console.log(x);
+}
 
-// TASK 3
+badFunction("If the function parameter is empty you get:");
+badFunction();
 
-let num = prompt("Enter a number");
+console.log();
+console.log("9 ---------------------------- 9");
 
-(num > 0) ? console.log(1) : 
-(num < 0) ? console.log(1) : console.log(0);
+function defaultParameters(from, text = "No message given.") {
+    from = `*${from}*`;
+    console.log(`${from}: ${text}`);
+}
 
-// TASK 4 
+defaultParameters("Anne");
+defaultParameters("James", "Hoi hoi!");
 
-let results;
+console.log();
+console.log("10 ---------------------------- 10");
 
-result = ((4 + 5) < 4) ? "Below" : "Over";
-console.log(result);
+function generateDescription(prefix = generatePrefix(),
+                            name = generateName(), 
+                            adj = generateAdj(),
+                            noun = generateNoun()) {
 
-// TASK 5 
+    console.log(`${prefix} ${name}, The ${adj} ${noun}!`);
 
-let login;
+}
 
-let message = (login == "Employee") ? "Hello" : 
-              (login == "Director") ? "Greetings" :
-              (login == "") ? "No Login" : "";
+function generatePrefix() {
+    let arr = ["King", "Queen", "Badman", "Killer", "Slayer", "Mighty", "Count"];
+    return arr[Math.floor(Math.random() * arr.length)]
+}
 
-console.log(message);
+function generateName() {
+    let arr = ["Larry", "Barry", "James", "Gobbe", "Hoit", "Gimli", "Sin"];
+    return arr[Math.floor(Math.random() * arr.length)]
+}
+
+function generateAdj() {
+    let arr = ["Smelly", "Hairy", "Slimy", "Scary", "Mighty", "Dry", "Wet"];
+    return arr[Math.floor(Math.random() * arr.length)]
+}
+
+function generateNoun() {
+    let arr = ["Warrior", "Knight", "Horse", "Sheep", "Person", "Cat", "Puppet"];
+    return arr[Math.floor(Math.random() * arr.length)]
+}
+
+generateDescription("Lord", "James", "Holy", "King");
+generateDescription();
+generateDescription();
+generateDescription();
+generateDescription();
+
+// ##### Default VAlues"!!!!! ####### //
