@@ -140,4 +140,151 @@ generateDescription();
 generateDescription();
 generateDescription();
 
-// ##### Default VAlues"!!!!! ####### //
+console.log();
+console.log("11 ---------------------------- 11");
+
+function makeSauce(spice, origin) {
+    if (origin == undefined) {
+        origin = "Earth";
+    }
+
+    console.log(`${origin}ly ${spice}`);
+}
+
+makeSauce();
+makeSauce("Hot Sauce");
+
+console.log();
+console.log("12 ---------------------------- 12");
+
+function makeSpice(spice, origin) {
+    origin = origin || "Mars";
+
+    console.log(`${origin}ley ${spice}`);
+}
+
+makeSpice();
+makeSpice("Hot Spice");
+
+console.log();
+console.log("13 ---------------------------- 13");
+
+function sum(a = 0, b = 0) {
+    return a + b;
+}
+
+let result1 = sum(2, 4);
+let result2 = sum();
+let result3 = sum(999999, 999999);
+console.log(`${result1}, ${result2}, ${result3}`);
+
+console.log();
+console.log("14 ---------------------------- 14");
+
+function boardBoat(name, age = 0) {
+    if (age == 0) {
+        return (`${name} gave no valid age.`);
+    } else if (age < 18) {
+        let remaining = 18 - age;
+        return (`${name} is not old enough. Wait another ${remaining} years.`);
+    }
+
+    return (`${name} is booked for seat ${Math.ceil(Math.random() * 99)}.`);
+}
+
+let ticketJames = boardBoat("James", 15);
+let ticketBilly = boardBoat("Billy", 9);
+let ticketLilly = boardBoat("Lilly", 19);
+let ticketBabbaya = boardBoat("Babbaya");
+
+console.log(ticketJames);
+console.log(ticketBilly);
+console.log(ticketLilly);
+console.log(ticketBabbaya);
+
+console.log();
+console.log("15 ---------------------------- 15");
+
+let ela = {
+    name: "Ela",
+    age: 15,
+    height: 150,
+    tooTall: false
+}
+
+let bond = {
+    name: "Bond",
+    age: 66,
+    height: 176,
+    tooTall: false
+}
+
+function checkHeight(height) {
+    if (height > 150) {
+        return true;
+    }
+    return false;
+}
+
+ela.tooTall = checkHeight(ela.height);
+bond.tooTall = checkHeight(bond.height);
+
+console.log(`Max height: 150cm.`);
+let people = [ela, bond];
+
+for (let i = 0; i < people.length; i++) {
+    console.log(`Is ${people[i].name} too tall?\n${people[i].tooTall}. ${people[i].name} is ${people[i].height}cm tall.`);
+}
+
+console.log();
+console.log("16 ---------------------------- 16");
+
+function printWord(word) {
+    if (word == undefined) return;
+    console.log(word);
+}
+
+printWord("Hey");
+printWord();
+printWord("Hey again");
+
+console.log();
+console.log("TASK 1 ---------------------------- TASK 1");
+
+function checkAge1(age) {
+    return (age > 18) ? true : false;
+}
+
+let kesi = checkAge1(12);
+let kayne = checkAge1(22);
+console.log(`Kesi: ${kesi}, Kayne: ${kayne}.`);
+
+function checkAge2(age) {
+    return (age > 18) || false;
+}
+
+let vinny = checkAge2(22);
+let thommas = checkAge2(14);
+console.log(`Vinny: ${vinny}, Thommas: ${thommas}.`);
+
+console.log();
+console.log("TASK 2 ---------------------------- TASK 2");
+
+function min(x, y) {
+    return (x < y) ? x : y;
+}
+
+console.log(min(2, 5));
+console.log(min(3, -1));
+console.log(min(1, 1));
+
+console.log();
+console.log("TASK 3 ---------------------------- TASK 3");
+
+function pow(x, n) {
+    return x ** n;
+}
+
+console.log(pow(3, 2));
+console.log(pow(3, 3));
+console.log(pow(1, 100));
