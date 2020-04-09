@@ -1,114 +1,208 @@
-let year = "2020";
+console.log("1 -------------------------------------------- 1");
 
-if (year == 2020) {
-    console.log(`The Year is ${2020}`);
-    console.log("Ham and Cheese");
-} 
+function pow(x, n) {
+  let result = 1;
 
-if (10 < 11) console.log("10 is less than 11");
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
 
-let condition = (year > 1997);
-
-if (condition) {
-    console.log("the year (2020) is greater than 1997");
+  return result;
 }
 
-if (!condition) {
-    console.log("the year is not greater than 1997");
+let x = prompt("x?", "");
+let n = prompt("n?", "");
+
+if (n < 0) {
+  console.log(`Power ${n} is not supported,
+    please enter a non-negative integer number.`);
 } else {
-    console.log("Already told you");
+  console.log( pow(x, n) );
 }
 
-if (!condition) {
-    console.log("Year is really big");
-} else if (year < 2030) {
-    console.log("The year is less than 2030");
+console.log();
+console.log("2 -------------------------------------------- 2");
+
+// bad
+if (1 < 2) {console.log("1 is less than 2.");}
+
+//bad
+if (1 < 2)
+  console.log("1 is less than 2..");
+
+// is okay
+if (1 < 2) console.log("1 is less than 2...");
+
+// the best way
+
+if (1 < 2) {
+  console.log("1 is less than 2!");
+}
+
+console.log();
+console.log("3 -------------------------------------------- 3");
+
+let str = `ECMA International's TC39 is a group of
+JavaScript developers, implementers, academics, and
+more, collaborating with the community to maintain
+and evolve the definition of JavaScript.
+`;
+
+console.log(str);
+
+console.log();
+console.log("4 -------------------------------------------- 4");
+
+if (
+  10 < 50 &&
+  50 < 100 &&
+  7 < 2 ||
+  5 === 5
+) {
+  console.log("Something went right...");
+}
+
+if (1442346 > 17 &&
+    56 < 352 &&
+    54234 > 444 &&
+    12 < 14
+  ) {
+  console.log("Looks like everything went right. But in an ugly way.");
+}
+
+if (17 < 1442346 
+    && 56 < 352 
+    && 54234 > 444 
+    && 12 < 14
+  ) {
+    console.log("Looks like everything went right. But in a pretty way.");
+}
+
+console.log();
+console.log("5 -------------------------------------------- 5");
+
+function sum(x, n) {
+  let num;
+
+  num = x + n;
+
+  return num;
+}
+
+console.log( sum(5, 5) );
+
+console.log();
+console.log("6 -------------------------------------------- 6");
+
+for (let i = 0; i < 3; i++) {
+  if (i == 2) {
+    console.log("ah!");
+  }
+}
+
+for (let i = 0; i < 3; i++) {
+  if (i != 2) continue;
+  console.log("ah!!!");
+}
+
+console.log();
+console.log("7 -------------------------------------------- 7");
+
+// less readable due to nesting
+
+function sub(x, n) {
+  if (n < 0) {
+    console.log("Negative 'n' not supported.");
+  } else {
+    let result;
+
+    result = x - n;
+
+    return result;
+  }
+}
+
+
+// more readable due to reduced nesting
+
+function mult(x, n) {
+  if (n < 0) {
+    console.log("Negative 'n' is not supported.");
+    return;
+  }
+
+  let result;
+
+  result = x * n;
+
+  return result;
+}
+
+
+console.log();
+console.log("8 -------------------------------------------- 8");
+
+
+/// UGLY VERSION ///
+
+function createElement() {
+  // ,,,
+}
+
+function setHandler(x) {
+  // ,,,
+}
+
+function walkAround() {
+  // ,,,
+}
+
+// the code which uses them
+
+let elem = createElement();
+setHandler(elem);
+walkAround();
+
+/// PRETTY VERSION ///
+
+// code which uses them
+
+let elem2 = createElement();
+setHandler(elem);
+walkAround();
+
+function createElement() {
+  // ,,,
+}
+
+function setHandler(x) {
+  // ,,,
+}
+
+function walkAround() {
+  // ,,,
+}
+
+
+console.log();
+console.log("TASK ---------------------- TASK ---------------------- TASK");
+
+function power(x, n) {
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x2 = prompt("number?", "");
+let n2 = prompt("second number?", "");
+
+if (n2 <= 0) {
+  console.log(`Power ${n2} is not supported, please enter
+    an integer number greater than 0.`);
 } else {
-    console.log("Dunno");
+  console.log( power(x2, n2) );
 }
-
-console.log(); // console readability whitespace
-
-const jim = {
-    age: 18,
-    name: 'Jim',
-    gender: 'Male',
-    hasHands: true,
-    accessAllowed: undefined
-}
-
-const ela = {
-    age: 13,
-    name: 'Ela',
-    gender: 'Female',
-    hasHands: false,
-    accessAllowed: undefined
-}
-
-setAccessPermission = obj => {
-    for (let i = 0; i < obj.length; i++) {
-
-        obj[i].accessAllowed = obj[i].age >= 18;
-
-        if (obj[i].accessAllowed) {
-            console.log(`${obj[i].name} is allowed access.`);
-        } else {
-            console.log(`${obj[i].name} is not allowed access.`);
-        }
-
-        obj[i].instrument = (obj[i].hasHands) ? 'Guitar' : 'Bongos';
-
-        console.log(`${obj[i].name}'s choice of instrument: ${obj[i].instrument.toLowerCase()}.`);
-
-        obj[i].introduction = (obj[i].age < 7) ? 'Hi...' : 
-        (obj[i].age < 14 && obj[i].age > 7) ? `Hey, I'm ${obj[i].name}` :
-        (obj[i].age >= 14 && obj[i].age < 99) ? 'Sup, bisch' : 'Errrhm! grrsm...';
-
-        console.log(obj[i].introduction);
-
-        (obj[i].gender == "Male") ? obj[i].temper = "Unpredictable" : obj[i].temper = "Calm";
-
-        console.log(`${obj[i].name}'s temper is rather ${obj[i].temper.toLowerCase()}.`);
-        console.log(); // console readability whitespace
-    }
-}
-
-let people = [jim, ela];
-setAccessPermission(people);
-
-// TASK 1
-
-if ("0") {
-    console.log(`a string of "0" is a true conditional`);
-}
-
-// TASK 2
-
-let answer = prompt("What is the official name of JavaScript");
-answer = answer.toLowerCase();
-
-(answer == "ecmascript") ? console.log("Correct!") : console.log("Wrong!");
-
-// TASK 3
-
-let num = prompt("Enter a number");
-
-(num > 0) ? console.log(1) : 
-(num < 0) ? console.log(1) : console.log(0);
-
-// TASK 4 
-
-let results;
-
-result = ((4 + 5) < 4) ? "Below" : "Over";
-console.log(result);
-
-// TASK 5 
-
-let login;
-
-let message = (login == "Employee") ? "Hello" : 
-              (login == "Director") ? "Greetings" :
-              (login == "") ? "No Login" : "";
-
-console.log(message);
